@@ -1,0 +1,51 @@
+body {
+    background: #fdd;
+    color: rgb(65, 61, 61);
+    text-align: center;
+    align-content: left;
+}
+
+.link-info {
+    color: #000;
+    font-size: 12pt;
+}
+
+.resultBox {
+    border: 1px solid #ccc;
+    width: 300px;
+    min-height: 300px;
+    background: #fdd;
+    
+}
+
+.container {
+    border: 3px solid #fff;
+    width: 300px;
+    min-height: 425px;
+    padding: 15px;
+    margin: auto;
+    background: #ccc;
+    float: left;
+    
+}
+
+.container p {
+    margin: 0;
+    padding: 0;
+}
+
+.containerBig {
+    border: 3px solid #ccc;
+    width: 1200px;
+    padding: 30px;
+    background: #ccc;
+    margin: auto;
+}
+
+#vartypes {
+    font-size: 10pt;
+}
+
+.clearfix {
+    clear: both;
+}
