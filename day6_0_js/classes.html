@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <script>
+        // setting up objects in js
+        let person = {
+            firstName: "elijah",
+            lastName: "craig",
+            birthdate: 2000,
+            getFullName: function () {
+                return this.firstName + " " + this.lastName;
+
+            },
+            getAge: function () { return 2022 - this.birthdate; }
+        }
+
+        function getme() {
+            document.getElementById("getmetest").innerHTML = person.getFullName() + ' <br> ' + person.getAge();
+        }
+
+        class Person {
+            constructor(name, family, birthday) {
+                this.firstName = name;
+                this.lastName = family;
+                this.birthdate = birthday;
+            }
+            getFullName() {
+                return this.firstName + " " + this.lastName;
+
+            }
+            getAge() { return 2022 - this.birthdate; }
+        }
+
+        function getper() {
+            fn = document.getElementById('fn').value;
+            ln = document.getElementById('ln').value;
+            bd = document.getElementById('bd').value;
+            let person1 = new Person(fn, ln, bd);
+            document.getElementById("getpertest").innerHTML = person1.getFullName() + ' <br> ' + person1.getAge();
+        }
+
+
+        // intervals in js
+        function stopwatchstart(output) {
+            var time = 0;
+            let t = setInterval(function () {
+                document.getElementById(output).innerHTML = time + '<br>';
+                time++;
+            }, 1000)
+        }
+
+        function stopwatchstop() {
+                    clearInterval(t);
+                    alert("Final time was: " + time);
+        }
+
+        function timerstart(input, output) {
+            var time = document.getElementById(input).value - 1;
+            let t = setInterval(function () {
+                document.getElementById(output).innerHTML = time;
+                --time;
+
+                if (time < 0) {
+                    clearInterval(t);
+                    alert("Timer has ended");
+                }
+            }, 1000)
+        }
+        
+        function timerexercise() {
+            var checkedup = document.getElementById('checkup').checked;
+            var checkeddown = document.getElementById('checkdown').checked;
+            var time = document.getElementById('times').value;
+            if (checkedup && checkeddown) {
+                var sw = 0;
+                let t = setInterval(function () {
+                    document.getElementById('countdown').innerHTML = time + "<br>";
+                    document.getElementById('countup').innerHTML = sw + "<br>";
+                    --time;
+                    ++sw;
+
+                    if (time < 0) {
+                        clearInterval(t);
+                    }
+
+                }, 1000)
+            } else if (checkedup) {
+                var sw = 0;
+                let t = setInterval(function () {
+                    document.getElementById('countup').innerHTML = sw + "<br>";
+                    --time;
+                    ++sw;
+
+                    if (time < 0) {
+                        clearInterval(t);
+                    }
+
+                }, 1000)
+            } else if (checkeddown) {
+                timerstart('times', 'countdown');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <button type="button" onclick="getme()">Get Me</button>
+        <div class="resultBox" id="getmetest"></div>
+    </div>
+
+    <div class="container">
+        <label for="fn">First Name</label>
+        <input type="text" id="fn">
+        <br>
+        <label for="ln">Last Name</label>
+        <input type="text" id="ln">
+        <br>
+        <label for="bd">Birth Year</label>
+        <input type="text" id="bd">
+        <button type="button" onclick="getper()">Get Person</button>
+        <div class="resultBox" id="getpertest"></div>
+    </div>
+
+    <div class="container">
+        <button type="button" onclick="stopwatchstart('swtest')">Start</button>
+        <button type="button" onclick="stopwatchstop()()">Stop</button>
+        <div class="resultBox" id="swtest" style="font-size: 70pt"></div>
+    </div>
+
+    <div class="container">
+        <label for="timertime">Time:</label>
+        <input type="number" id="timertime">
+        <button type="button" onclick="timerstart('timertime', 'timertest')">Start</button>
+        <div class="resultBox" id="timertest" style="font-size: 70pt"></div>
+    </div>
+
+
+    <div class="container">
+        <label for="times">Time:</label>
+        <input type="number" id="times">
+        <br>
+        <label for="checkup">Count up</label>
+        <input type="checkbox" id="checkup">
+        <label for="checkdown">Countdown</label>
+        <input type="checkbox" id="checkdown">
+        <br>
+        <button type="button" onclick="timerexercise()">GO!</button>
+    </div>
+        
+    <div class="container">
+        <div class="resultBox" id="countup" style="font-size: 48pt;"> </div>
+        <br>
+        <div class="resultBox" id="countdown" style="font-size: 48pt;"> </div>
+    </div>
+</body>
+
+</html>

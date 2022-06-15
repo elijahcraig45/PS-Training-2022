@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <script>
+        function firstFunc() {
+            alert('You learned JS alerts!')
+        }
+
+        function secondFunc() {
+            document.getElementById('resultBox0').innerHTML = 'Hello Cool PERSON <br> You learned to change html with JS functions!!!'
+        }
+
+        function thirdFunc() {
+            document.getElementById('resultBox0').style.color = '#5fd'
+        }
+
+        function getname() {
+            var name = document.getElementById('inp_name').value;  // gets input and stores it in a variable
+            document.getElementById('resultBox1').innerHTML += name + '<br>'; // adds input to list
+            document.getElementById('inp_name').value = null; // clears input box on link click
+            // alert( name );
+        }
+
+        function twoinp() {
+            var one = document.getElementById('inp1').value;
+            var two = document.getElementById('inp2').value;
+            document.getElementById('resultBox2').innerHTML += one + ' ' + two + '<br>';
+            document.getElementById('inp1').value = null; // clears input box on link click
+            document.getElementById('inp2').value = null; // clears input box on link click
+        }
+
+        function fourfunc() {
+            var a = document.getElementById('inp3').value;
+
+            if (a == null) {
+                alert('can\' have a null name!');
+            } else if (a == "tee") {
+                document.getElementById('resultBox3').innerHTML = "hello darling <br>";
+                document.getElementById('inp3').value = null; // clears input box on link click
+            } else if (a == "me") {
+                document.getElementById('resultBox3').innerHTML = "hello handsome <br?";
+                document.getElementById('inp3').value = null; // clears input box on link click
+            } else {
+                document.getElementById('resultBox3').innerHTML = "I don't know you. BYE!";
+                document.getElementById('inp3').value = null; // clears input box on link click
+            }
+        }
+
+        function calculator() {
+            var a = parseFloat(document.getElementById('inp4').value);
+            var b = parseFloat(document.getElementById('inp5').value);
+            var o = document.getElementById('inp6').value;
+            o = parseFloat(o);
+
+            if (o == 1) {
+                document.getElementById('resultBox4').innerHTML = a + '+' + b + '=';
+                document.getElementById('resultBox4').innerHTML += a + b;
+            } else if (o == 2) {
+                if (a - b >= 0) {
+                    document.getElementById('resultBox4').innerHTML = a + '-' + b + '=';
+                    document.getElementById('resultBox4').innerHTML += a - b;
+                } else {
+                    document.getElementById('resultBox4').innerHTML = b + '-' + a + '=';
+                    document.getElementById('resultBox4').innerHTML += b - a;
+                }
+            } else if (o == 3) {
+                document.getElementById('resultBox4').innerHTML = a + '*' + b + '=';
+                document.getElementById('resultBox4').innerHTML += a * b;
+            } else if (o == 4) {
+                document.getElementById('resultBox4').innerHTML = a + '/' + b + '=';
+                document.getElementById('resultBox4').innerHTML += a / b;
+            } else {
+                document.getElementById('resultBox4').innerHTML = 'ERROR: Invalid operation';
+            }
+        }
+
+        function delayinp() {
+            var t = parseInt(document.getElementById('inp7').value);
+            t = t * 1000;
+
+
+            setTimeout(function () {
+                alert('Delay with lambda function')
+            }, t);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <a href="#" onclick="firstFunc()" class="link-info">Click here to learn JS alerts!</a>
+
+        <br>
+
+        <a href='#' onclick="secondFunc()" class="link-info">Click here to learn to change HTML in JS!</a>
+        <br>
+        <a href="#" onclick="thirdFunc()" class="link-info">Click here for a color change!</a>
+        <hr>
+        <div class="resultBox" id="resultBox0"> </div>
+    </div>
+
+    <div class="container">
+        <br>
+        <a href="#" onclick="getname()" class="link-info">Get Name</a>
+        <input type="text" id="inp_name">
+        <br><br>
+        <hr>
+        <div id="resultBox1" class="resultBox"></div>
+    </div>
+
+    <div class="container">
+        <label for="inp1">Input 1</label>
+        <input type="text" id="inp1">
+        <br>
+        <label for="inp2">Input 2</label>
+        <input type="text" id="inp2">
+        <br>
+        <a href="#" onclick="twoinp()" class="link-info">Get Inputs</a>
+        <hr>
+        <div class="resultBox" id="resultBox2"></div>
+    </div>
+
+
+    <div class="container">
+        <p>Conditional (try 'tee' and 'me')</p>
+        <label for="inp1">Input 3</label>
+        <input type="text" id="inp3">
+        <br>
+        <a href="#" onclick="fourfunc()" class="link-info">Say Hello</a>
+        <div class="resultBox" id="resultBox3"></div>
+    </div>
+
+    <div class="container">
+        <p>1:+; 2:-; 3:*; 4:/;</p>
+        <label for="inp4">Input 1</label>
+        <input type="text" id="inp4">
+        <br>
+        <label for="inp5">Input 2</label>
+        <input type="text" id="inp5">
+        <br>
+        <label for="inp6">Input 2</label>
+        <input type="text" id="inp6">
+        <br>
+        <button type="submit" onclick="calculator()">calculate</button>
+        <div class="resultBox" id="resultBox4"></div>
+    </div>
+
+    <div class="container">
+        <h2>Variables in javascript</h2>
+        <p id="vartypes">
+            <strong>var</strong> keyword in JavaScript: The var is the oldest keyword to declare a variable in
+            JavaScript.
+            Scope: Global scoped or function scoped. The scope of the var keyword is the global or function scope.
+            It means variables defined outside the function can be accessed globally,
+            and variables defined inside a particular function can be accessed within the function.
+            Example 1: Variable ‘a’ is declared globally. So, the scope of the variable ‘a’ is global,
+            and it can be accessible everywhere in the program.
+            <br>
+        </p>
+    </div>
+    <div class="container">
+        <h2>Variables in javascript cont</h2>
+        <p>
+            <strong>let</strong> keyword in JavaScript: The let keyword is an improved version of the var keyword.
+            Scope: block scoped: The scope of a let variable is only block scoped.
+            It can’t be accessible outside the particular block ({block}).
+            <br>
+        </p>
+    </div>
+    <div class="container">
+        <h2 style="font-size: 12pt;">Variables in javascript cont</h2>
+        <p>
+            <strong>const</strong> keyword in JavaScript: The const keyword has all the properties that are the same as
+            the let keyword,
+            except the user cannot update it.
+            Scope: block scoped: When users declare a const variable, they need to initialize it, otherwise, it returns
+            an error.
+            The user cannot update the const variable once it is declared.
+            Example 1: We are changing the value of the const variable so that it returns an error.
+        </p>
+    </div>
+
+    <div class="container">
+        <label for="inp7">Input Time</label>
+        <input type="text" id="inp7">
+        <br>
+        <button type="button" onclick="delayinp()">Delay</button>
+    </div>
+
+    <br style="float: none;"> <br style="float: none;">
+    <hr style="float: none;">
+    <a href="./classes.html" style="text-align: center; float: none;" class="link-info">Link to Classes and Objects in
+        JS</a>
+</body>
+
+</html>

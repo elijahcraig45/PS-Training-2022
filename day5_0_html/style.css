@@ -1,0 +1,18 @@
+body {
+  background: #fff;
+  color: #000;
+  padding: 25px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.table {
+  border: 5px;
+  width: 50%;
+  text-align: center;
+  float: center;
+}
+
+.list {
+  text-align: left;
+}
