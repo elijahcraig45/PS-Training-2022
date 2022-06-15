@@ -1,0 +1,53 @@
+body {
+  background: #fffaf2;
+}
+
+.container {
+  border: 1px solid #ccc;
+  width: 200px;
+  /*height: 300px;*/
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 15px;
+  background: #fff;
+  float: left;
+  min-height: 100px;
+}
+
+.container ul {
+  list-style-type: square;
+}
+
+.container ol {
+  list-style-type: decimal-leading-zero;
+}
+
+.right-text {
+  text-align: right;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.btn_save {
+  cursor: pointer;
+  border-radius: 5px;
+  border: 10px;
+  border-color: #000;
+  background: #fffaf2;
+  padding: 7px 15px;
+  transition: 3s all;
+}
+
+.btn_save:hover {
+  background: #000;
+  padding: 15px 30px;
+  color: #fffaf2;
+}
+
+
+
+.clearcont {
+  clear: both;
+}

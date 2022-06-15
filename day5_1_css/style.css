@@ -1,0 +1,67 @@
+body {
+  background: #60bbf7;
+  color: #ffffff;
+  padding: 25px;
+  font-family: sans-serif;
+  margin: auto;
+}
+
+/* this is a comment
+  on another line
+  
+  comments are public on css and html
+  */
+.myH {
+  color: #ffffff;
+}
+
+#title1 {
+  font-size: 45pt;
+  text-align: left;
+}
+
+#title2 {
+  text-align: center;
+}
+
+#title3 {
+  color: #4fff31;
+  text-align: right;
+}
+
+.box {
+  width: 200px;
+  border: 20px #cc84a1 solid;
+  border-left-width: 1px;
+  border-right-width: 10px;
+  border-top-width: 13px;
+  /* For padding, starts at top then going clockwise around if given 4 values */
+  padding: 15px 0px 20px 25px;
+  text-align: justify;
+  /* float is an attribute that allows us to put elements side by side */
+  /* float left starts on left side of screen, float right puts first element on far right */
+  float: left;
+  /* margin is spacing outside of what padding covers/ outside of element or between elements*/
+  margin: 20px;
+}
+
+.box2 {
+  width: 200px;
+  border: 20px #cc84a1 solid;
+  border-left-width: 1px;
+  border-right-width: 10px;
+  border-top-width: 13px;
+  /* For padding, starts at top then going clockwise around if given 4 values */
+  padding: 15px 0px 20px 25px;
+  text-align: justify;
+  /* float is an attribute that allows us to put elements side by side */
+  /* float left starts on left side of screen, float right puts first element on far right */
+  float: right;
+  /* margin is spacing outside of what padding covers/ outside of element or between elements*/
+  margin: 20px;
+}
+
+#link1 {
+  text-align: left;
+  padding: 30px;
+}
